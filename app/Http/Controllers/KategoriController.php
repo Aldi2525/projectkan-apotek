@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Barang;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
 
@@ -15,6 +15,8 @@ class KategoriController extends Controller
     public function index()
     {
         //
+        $kategori = Kategori::all();
+        return view('admin.kategori.index', compact('kategori'));
     }
 
     /**
@@ -25,6 +27,7 @@ class KategoriController extends Controller
     public function create()
     {
         //
+        return view('admin.kategori.create');
     }
 
     /**
@@ -36,6 +39,18 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
         //
+         //validasi data
+         $validated = $request->validate([
+            'kd_kategori' => 'required',
+            'nama_kategori' => 'required',
+        ]);
+
+        $kategori = new Kategori;
+        $kategori->kd_kategori = $request->kd_kategori;
+        $kategori->nama_kategori = $request->nama_kategori;
+        $kategori->save();
+        return redirect()->route('kategori.index');
+
     }
 
     /**
@@ -44,9 +59,11 @@ class KategoriController extends Controller
      * @param  \App\Models\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function show(Kategori $kategori)
+    public function show($id)
     {
         //
+        $kategori = Kategori::findOrFail($id);
+        return view('admin.kategori.show', compact('kategori'));
     }
 
     /**
@@ -55,9 +72,11 @@ class KategoriController extends Controller
      * @param  \App\Models\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kategori $kategori)
+    public function edit($id)
     {
         //
+        $kategori = Kategori::findOrFail($id);
+        return view('admin.kategori.edit', compact('kategori'));
     }
 
     /**
@@ -67,10 +86,22 @@ class KategoriController extends Controller
      * @param  \App\Models\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kategori $kategori)
+    public function update(Request $request,$id)
     {
-        //
+      //validasi data
+$validated = $request->validate([
+    'kd_kategori' => 'required',
+    'nama_kategori' => 'required',
+  ]);
+
+    $kategori = Kategori::findOrFail($id);
+    $kategori->kd_kategori = $request->kd_kategori;
+    $kategori->nama_kategori = $request->nama_kategori;
+    $kategori->save();
+    return redirect()->route('kategori.index');
     }
+
+
 
     /**
      * Remove the specified resource from storage.
@@ -78,8 +109,11 @@ class KategoriController extends Controller
      * @param  \App\Models\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kategori $kategori)
+    public function destroy($id)
     {
         //
+        $kategori = Kategori::findOrFail($id);
+        $kategori->delete();
+        return redirect()->route('kategori.index');
     }
 }

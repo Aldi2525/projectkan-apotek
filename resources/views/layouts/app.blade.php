@@ -10,14 +10,14 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('assets/dist/js/adminlte.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/dist/css/adminlte.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -53,12 +53,9 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                <div class="nav-item" aria-labelledby="navbarDropdown">
+                                    <a class="nav-link" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
@@ -78,6 +75,12 @@
         <main class="py-4">
             @yield('content')
         </main>
+        <footer class="fixed-bottom">
+             <center>Copyright &copy; Larapus Made with Love
+                 Developed By <a href="https://wa.me/6289662747512">Aldi Awaludin</a> -
+                 {{date('Y')}}
+             </center>
+        </footer>
     </div>
 </body>
 </html>

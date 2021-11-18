@@ -19,8 +19,8 @@ class Kategori extends Model
     //membuat relasi one to many
     public function books()
     {
-        // data model "Author" bisa memiliki banyak data
+        // data model "kategori" bisa memiliki banyak data
         //dari model "Book" melalui fk "author_id"
-        $this->hasMany('App\Models\Barang','kd_kategori');
+        $this->hasMany('App\Models\Barang','kategori_id');
     }
 }

@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\KategoriController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,3 +46,4 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin']],
 
 Route::resource('author', AuthorController::class);
 Route::resource('book', BookController::class);
+Route::resource('kategori', KategoriController::class);
