@@ -13,20 +13,19 @@ class CreateBKeluarTable extends Migration
      */
     public function up()
     {
-        Schema::create('b_keluar', function (Blueprint $table) {
+        Schema::create('b_keluars', function (Blueprint $table) {
             $table->id();
-            $table->integer('jumlah');
             $table->integer('kode_bm');
             $table->BigInteger('barang_id')->unsigned();
             $table->integer('kode_trans');
-            $table->integer('jmlh');
+            $table->integer('jumlah');
             $table->integer('harga_total');
             $table->string('user');
             $table->string('supplier');
             $table->string('diskon');
 
             $table->foreign("barang_id")->references('id')
-                ->on('barang')->onUpdate('cascade')
+                ->on('barangs')->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->timestamps();
         });

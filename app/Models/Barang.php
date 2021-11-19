@@ -16,7 +16,13 @@ class Barang extends Model
 
     public $timestamps = true;
 
-    public function author()
+    public function kategori()
+    {
+        // Data model "Model" bisa memiliki oleh model "Author"
+        //melalui fk "author_id"
+        return $this->belongsTo('App\Models\Kategori','kategori_id');
+    }
+    public function barangs()
     {
         // Data model "Model" bisa memiliki oleh model "Author"
         //melalui fk "author_id"
@@ -24,8 +30,8 @@ class Barang extends Model
     }
     public function image()
     {
-        if ($this->cover && file_exists(public_path('images/books/' . $this->cover))) {
-            return asset('images/books/' . $this->cover);
+        if ($this->gambar && file_exists(public_path('images/barang/' . $this->gambar))) {
+            return asset('images/barang/' . $this->gambar);
         } else {
             return asset('images/no_image.png');
         }
@@ -33,9 +39,10 @@ class Barang extends Model
 
     public function deleteImage()
     {
-        if ($this->cover && file_exists(public_path('images/books/' . $this->cover))) {
-            return unlink(public_path('images/books/' . $this->cover));
+        if ($this->gambar && file_exists(public_path('images/barang/' . $this->gambar))) {
+            return unlink(public_path('images/barang/' . $this->gambar));
         }
 
     }
+
 }

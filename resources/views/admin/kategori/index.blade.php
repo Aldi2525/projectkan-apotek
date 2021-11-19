@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-12">
-                <h1 class="m-0"><b><i>Data Penulis</i></b></h1>
+                <h1 class="m-0"><b><i>Data Kategori</i></b></h1>
             </div>
         </div>
     </div>
@@ -17,8 +17,8 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                   <b>Data Penulis</b>
-                    <a href="{{route('kategori.create')}}" class="btn btn-sm btn-outline-primary float-right"><i>Tambah Penulis</i></a>
+                   <b>Data Kategori</b>
+                    <a href="{{route('kategori.create')}}" class="btn btn-sm btn-outline-primary float-right"><i>Tambah Kategori</i></a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -42,8 +42,6 @@
                                      <form action="{{route('kategori.destroy',$data->id)}}" method="post">
                                         @method('delete')
                                         @csrf
-                                        <a href="{{route('kategori.edit',$data->id)}}" class="btn btn-outline-info">Edit</a>
-                                        <a href="{{route('kategori.show',$data->id)}}" class="btn btn-outline-warning">Show</a>
                                         <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Apakah anda yakin menghapusnya')">HAPUS</button>
                                         </form>
                                  </td>

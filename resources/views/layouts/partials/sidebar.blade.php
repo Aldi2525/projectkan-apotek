@@ -48,22 +48,69 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
+
+                <li class="nav-item">
+                    <a href="{{ route("kategori.index") }}" class="nav-link {{ Request::is('admin') ? 'active' : '' }}">
+
+                      <p>Data Kategori</p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="{{ route("barang.index") }}" class="nav-link {{ Request::is('admin') ? 'active' : '' }}">
+
+                      <p>Data Barang</p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="{{ route("bmasuk.index") }}" class="nav-link {{ Request::is('admin') ? 'active' : '' }}">
+
+                      <p>Data Masuk</p>
+                    </a>
+                  </li>
+
+                  {{-- <li class="nav-item">
+                    <a href="{{ route("transaksi.index") }}" class="nav-link {{ Request::is('admin') ? 'active' : '' }}">
+
+                      <p>Transaksi</p>
+                    </a>
+                  </li> --}}
+
+                  <li class="nav-item">
+                    <a href="{{ route("bkeluar.index") }}" class="nav-link {{ Request::is('admin') ? 'active' : '' }}">
+
+                      <p>Data Keluar</p>
+                    </a>
+                  </li>
+              {{-- <li class="nav-item">
                 <a href="./kategori" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Kategori</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="./barang" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v2</p>
+                  <p>Barang</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="./bmasuk" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
+                  <p>Barang Masuk</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./transaksi" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Transaksi</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./bkeluar" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Barang Keluar</p> --}}
                 </a>
               </li>
             </ul>
