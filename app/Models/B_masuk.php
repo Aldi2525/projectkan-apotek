@@ -20,6 +20,6 @@ class B_masuk extends Model
     {
         // data model "kategori" bisa memiliki banyak data
         //dari model "Book" melalui fk "author_id"
-        return $this->belongsTo('App\Models\B_masuk','barang_id');
+        return $this->belongsTo('App\Models\Barang','barang_id');
     }
 }

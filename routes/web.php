@@ -8,6 +8,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\BMasukController;
 use App\Http\Controllers\BKeluarController;
+use App\Http\Controllers\TransaksiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,4 +53,6 @@ Route::resource('kategori', KategoriController::class);
 Route::resource('barang', BarangController::class);
 Route::resource('bmasuk', BMasukController::class);
 Route::resource('bkeluar', BKeluarController::class);
+Route::resource('transaksi', TransaksiController::class);
+
 

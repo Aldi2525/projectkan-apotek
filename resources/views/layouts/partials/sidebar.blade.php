@@ -70,12 +70,12 @@
                     </a>
                   </li>
 
-                  {{-- <li class="nav-item">
+                  <li class="nav-item">
                     <a href="{{ route("transaksi.index") }}" class="nav-link {{ Request::is('admin') ? 'active' : '' }}">
 
                       <p>Transaksi</p>
                     </a>
-                  </li> --}}
+                  </li>
 
                   <li class="nav-item">
                     <a href="{{ route("bkeluar.index") }}" class="nav-link {{ Request::is('admin') ? 'active' : '' }}">

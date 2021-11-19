@@ -26,7 +26,7 @@ class Barang extends Model
     {
         // Data model "Model" bisa memiliki oleh model "Author"
         //melalui fk "author_id"
-        return $this->belongsTo('App\Models\Kategori','kategori_id');
+        return $this->hasMany('App\Models\B_masuk','barang_id');
     }
     public function image()
     {
